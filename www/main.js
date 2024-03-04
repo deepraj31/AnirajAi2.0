@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     $('.text').textillate({
@@ -45,7 +47,7 @@ $(document).ready(function () {
         eel.playAssistantSound()
         $("#Oval").attr("hidden", true);
         $("#SiriWave").attr("hidden", false);
-
+        eel.allCommands()
     });
 
 });
