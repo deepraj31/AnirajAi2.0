@@ -4,6 +4,7 @@ import eel
 import time
 
 
+
 def speak(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')
@@ -43,18 +44,22 @@ def take_command():
 
 @eel.expose
 def allCommands():
-    query = take_command()
-    print(query)
+    try:
+            
+        query = take_command()
+        # print(query)
 
-    if "open" in query :
-        from engine.features import openCommand
-        openCommand(query)
+        if "open" in query :
+            from engine.features import openCommand
+            openCommand(query)
 
-    elif "on youtube":
-        from engine.features import PlayYoutube
-        PlayYoutube(query)
+        elif "on youtube":
+            from engine.features import PlayYoutube
+            PlayYoutube(query)
 
-    else:
-        print("not run")
+        else:
+            print("not run")
+    except:
+        speak("I didn't get that, please say again..")
 
     eel.ShowHood()
